@@ -33,7 +33,7 @@ def cookies_to_string(cookies):
 async def get_cookies():
     async with async_playwright() as p:
         browser = await p.chromium.launch(
-            headless=False,
+            headless=True,
             args=["--lang=fr-FR", "--disable-blink-features=AutomationControlled"]
         )
         context = await browser.new_context()
